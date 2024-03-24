@@ -1,0 +1,43 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.borderPane_background{
+	-fx-background-image:url('../img/loginPage/rightpaneBg.jpg');
+	-fx-background-repeat: none;
+	-fx-background-size: cover;
+}
+.vbox_background_right{
+	-fx-background-image:url('../img/loginPage/loginBg.jpg');
+	-fx-background-size: cover;
+}
+
+.login_button{
+	-fx-background-color: #016394; /* for changing background color */
+}
+.login_button:hover{
+	-fx-background-color: #0e7789;
+}
+.signUp_button{
+	-fx-background-color: #fafcee;
+	-fx-text-fill: #0e7789;		/* for changing text color */
+}
+.signUp_button:hover{
+	-fx-text-fill: #eef7b2;
+	-fx-background-color: #3585ad;
+}
+.cursor_hand{
+	-fx-cursor: hand;
+}
+.login_input{
+	-fx-background-color: #079c94;
+}
+.login_input:hover{
+	-fx-background-color: #11d1c7;
+}
+.forgot_pass{
+	-fx-text-fill:#008ebf;
+}
+.forgot_pass:hover{
+	-fx-text-fill:#1ba3d2;
+}
+
+
