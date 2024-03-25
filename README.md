@@ -3,17 +3,17 @@
 ## CC103 FINALS GROUP#1 PROJECT
 
 Project Manager:
-   Jonota, Christopher
+   Jonota, Christopher<br>
    
-COLLABORATORS:
+COLLABORATORS:<br>
    Gerero, Nina<br>
    Latade, Gennelyn Mae <br>
    Cuerdo, Robinne <br>
    Santos, Miko <br>
-   Gallardo, Sage
-   Pimentel, Carlo
-   Mendoza, Nikka
-   Longanilla, Kurt
+   Gallardo, Sage<br>
+   Pimentel, Carlo<br>
+   Mendoza, Nikka<br>
+   Longanilla, Kurt<br>
 
 
 
