@@ -23,3 +23,4 @@
 <br><br>
 9. After you import the project, it should look like this inside your workspace with errors, in order to resolve this errors, we must setup the resources we download earlier inside our project<br>
      ![image](https://github.com/christopherjonota/CC103-PROJECT-FINALS/assets/70148137/99d8fefc-9e48-4d14-860c-e7bf23309292)
+ 
