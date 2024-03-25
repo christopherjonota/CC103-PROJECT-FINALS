@@ -1,9 +1,7 @@
-# CC103-PROJECT-FINALS
-
-## CC103 FINALS GROUP#1 PROJECT
+# CC103-PROJECT-FINALS GROUP#1
 
 Project Manager:
-   Jonota, Christopher<br>
+<br>Jonota, Christopher<br>
    
 COLLABORATORS:<br>
    Gerero, Nina<br>
