@@ -3,10 +3,10 @@
 *Project Manager:*
 <br>  Jonota, Christopher<br>
    
-COLLABORATORS:
-<br> Gerero, Nina
-<br>   Latade, Gennelyn Mae 
-<br>   Cuerdo, Robinne <br>
+<br><br>COLLABORATORS:<br>
+    Gerero, Nina <br>
+   Latade, Gennelyn Mae <br>
+   Cuerdo, Robinne <br>
    Santos, Miko <br>
    Gallardo, Sage<br>
    Pimentel, Carlo<br>
