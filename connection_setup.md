@@ -6,7 +6,9 @@ To setup a mysql connection using JDBC:<br>
   ![image](https://github.com/christopherjonota/CC103-PROJECT-FINALS/assets/70148137/90f33e7c-ddad-4131-bf00-885d6f830047)
 <br>
 4. Then go to Service and Port Settings<br>
-![image](https://github.com/christopherjonota/CC103-PROJECT-FINALS/assets/70148137/cc30541f-22c4-4c31-8c8b-dddf70bf9b95)<br>
+
+![image](https://github.com/christopherjonota/CC103-PROJECT-FINALS/assets/70148137/cc30541f-22c4-4c31-8c8b-dddf70bf9b95) <br>
+
 5. Then go to MySQL tab and check the Main port number. To have the same port within the group, use 3306 as port number then save it<br>
 
 6. In the Xampp controller, in the MySQL, click the Admin. <br>
