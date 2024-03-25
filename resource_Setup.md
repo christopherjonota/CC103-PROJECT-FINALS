@@ -1,6 +1,6 @@
 --------------------------------------- JAVAFX AND MYSQL CONNECTOR SETUP ---------------------------------------
 
-1. To setup JavaFx and mysql connector inside the project, right click the project folder and select Properties<br>
+1. To setup JavaFx and mysql connector inside the project, right click the project folder and select Properties<br> 
 
 ![image](https://github.com/christopherjonota/CC103-PROJECT-FINALS/assets/70148137/b024d662-92c8-41b6-9a14-640b33ed4a14)
 
