@@ -1,10 +1,10 @@
 # CC103-PROJECT-FINALS GROUP#1
 
-*Project Manager:*
+<b>Project Manager:</b>
 <br>  Jonota, Christopher<br>
    
-<br><br>COLLABORATORS:<br>
-    Gerero, Nina <br>
+<br><br><b>COLLABORATORS:</b><br>
+   Gerero, Nina <br>
    Latade, Gennelyn Mae <br>
    Cuerdo, Robinne <br>
    Santos, Miko <br>
