@@ -40,12 +40,12 @@
                         <Image url="@../img/loginPage/QCU_Logo_2019.png" />
                      </image>
                   </ImageView>
-                  <TextField maxHeight="50.0" maxWidth="350.0" prefHeight="50.0" prefWidth="350.0" promptText="Username" style="-fx-border-radius: 25; -fx-background-radius: 25;" GridPane.rowIndex="4">
+                  <TextField fx:id="login_username" maxHeight="50.0" maxWidth="350.0" prefHeight="50.0" prefWidth="350.0" promptText="Username" style="-fx-border-radius: 25; -fx-background-radius: 25;" GridPane.rowIndex="4">
                      <font>
                         <Font name="Rowdies Light" size="20.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="60.0" layoutY="270.0" maxHeight="50.0" maxWidth="350.0" prefHeight="50.0" prefWidth="337.0" promptText="Password" style="-fx-border-radius: 25; -fx-background-radius: 25;" GridPane.rowIndex="5">
+                  <TextField fx:id="login_password" layoutX="60.0" layoutY="270.0" maxHeight="50.0" maxWidth="350.0" prefHeight="50.0" prefWidth="337.0" promptText="Password" style="-fx-border-radius: 25; -fx-background-radius: 25;" GridPane.rowIndex="5">
                      <font>
                         <Font name="Rowdies Light" size="20.0" />
                      </font>
