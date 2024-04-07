@@ -39,5 +39,8 @@
 .forgot_pass:hover{
 	-fx-text-fill:#1ba3d2;
 }
-
+.borderBox{
+	-fx-border-color: #FF0000;
+	-fx-border-width: 2px;
+}
 
