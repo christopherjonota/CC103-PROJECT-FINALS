@@ -124,12 +124,28 @@ public class LoginPageController {
 				
 				while (queryResult.next()) {
 					if(queryResult.getInt(1) == 1) {
-						// This will switch the page to homepage if validated 
-						root = FXMLLoader.load(getClass().getResource("HomePage.fxml")); 
-						stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
-						scene = new Scene(root); 
-						stage.setScene(scene); 
-						stage.show();
+						queryResult.close();
+						statement = "SELECT newUser FROM credentials WHERE BINARY username= '" + usernameInput +"' AND BINARY password='"+ passwordInput + "';";
+						queryResult = stat.executeQuery(statement);
+						
+						while(queryResult.next()) {
+							if(queryResult.getInt(1) == 0) {
+								// This will switch the page to homepage if validated 
+								root = FXMLLoader.load(getClass().getResource("HomePageSetup.fxml")); 
+								stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+								scene = new Scene(root); 
+								stage.setScene(scene); 
+								stage.show();
+							}	
+							else if(queryResult.getInt(1) == 1) {
+								// This will switch the page to homepage if validated 
+								root = FXMLLoader.load(getClass().getResource("HomePage.fxml")); 
+								stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+								scene = new Scene(root); 
+								stage.setScene(scene); 
+								stage.show();
+							}	
+						}	
 					}
 					else {
 						login_username.setText("");
