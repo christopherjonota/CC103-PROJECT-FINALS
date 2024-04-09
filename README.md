@@ -10,7 +10,7 @@
    Santos, Miko <br>
    Gallardo, Sage<br>
    Pimentel, Carlo<br>
-   Mendoza, Nikka<br>
+   Gadon, Ermalyn<br>
    Longanilla, Kurt<br>
 
 
