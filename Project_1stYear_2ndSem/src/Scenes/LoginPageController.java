@@ -33,9 +33,7 @@ public class LoginPageController {
 	@FXML
 	private Rectangle loginMessageBackground;	// fxid for the background of the label
 	@FXML
-	private TextField login_username; 			// fxid for Username textbox
-	@FXML
-	private TextField login_password;			// fxid for Password textbox
+	private Rectangle loginADADADAADAund;	// fxid for the background of the label
 	//////////////////////////////////////////////////////////////////////////////////////////////
 
 	
