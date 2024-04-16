@@ -5,6 +5,10 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.sql.Connection;
 
+import com.mysql.cj.MysqlConnection;
+
+import application.Main;
+
 import java.sql.*;
 
 import javafx.fxml.FXML;
@@ -36,6 +40,12 @@ public class LoginPageController {
 	private TextField login_username; 			// fxid for Username textbox
 	@FXML
 	private TextField login_password;			// fxid for Password textbox
+	
+	Main main = new Main();
+	mySQLConnection();
+	
+	String usernameInput = "";
+	String passwordInput = "";
 	//////////////////////////////////////////////////////////////////////////////////////////////
 
 	
@@ -73,8 +83,8 @@ public class LoginPageController {
 	public void loginClicked(ActionEvent event) throws IOException {
 
 		// trim() - is used to remove whitespaces on the input of the user
-		String usernameInput = login_username.getText().trim();
-		String passwordInput = login_password.getText().trim();
+		usernameInput = login_username.getText().trim();
+		passwordInput = login_password.getText().trim();
 
 		// If the user do not input something or inputs a white space and click the
 		// login button, this will return.
@@ -104,19 +114,9 @@ public class LoginPageController {
 				login_username.getStyleClass().remove("borderBox");
 				login_password.getStyleClass().remove("borderBox");
 				
-				
-				Class.forName("com.mysql.cj.jdbc.Driver");	// This is used for loading mysql Driver				
-				// REMINDER: THIS MUST CHANGE ACCORDING TO YOUR DEVICE ESPECIALLY THE PORT ADDRESS!!
-				// those inside the getConnection parameter is => (Database:Driver://ServerAddress:PortAddress/DatabaseName,Username,Password)
-				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/payrollsystemdb", "root", "");
-
-				
-				// This will check if there are similar data inside the database according to the input of the user 
-				// This will retrieve the username and password based on the input of the user		
-				// The 'BINARY' function will convert the string to a value which it is used as case-sensitivity checking.
 				String statement = "SELECT count(1) FROM credentials WHERE BINARY username= '" + usernameInput +"' AND BINARY password='"+ passwordInput + "';";
 
-				
+				String con = mySQLConnection().con;
 				// This will create and execute the statement
 				Statement stat = con.createStatement();
 				ResultSet queryResult = stat.executeQuery(statement);
@@ -157,8 +157,6 @@ public class LoginPageController {
 						login_password.getStyleClass().add("borderBox");
 					}		
 				} 
-				
-
 				// This will catch the errors and prints it in the console to be diagnosed
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
@@ -175,5 +173,10 @@ public class LoginPageController {
 		loginMessageLabel.setText("");
 		loginMessageBackground.setVisible(false);
 		exitMessageLabel.setVisible(false);
+	}
+	
+	
+	public void userData(String username, String password) {
+		
 	}
 }
