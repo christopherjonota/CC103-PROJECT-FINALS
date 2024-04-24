@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.sql.*;
 
+import application.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -13,6 +14,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
 
 import javafx.stage.Stage;
@@ -36,8 +39,8 @@ public class LoginPageController {
 	private TextField login_password;			// fxid for Password textbox
 
 	
-	String usernameInput = "";
-	String passwordInput = "";
+	public String usernameInput = "";
+	public String passwordInput = "";
 	//////////////////////////////////////////////////////////////////////////////////////////////
 
 	
@@ -72,7 +75,7 @@ public class LoginPageController {
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	// Method for the Login Button in the input area
 	@FXML
-	public void loginClicked(ActionEvent event) throws IOException {
+	public String loginClicked(ActionEvent event) throws IOException {
 		// trim() - is used to remove whitespaces on the input of the user
 		usernameInput = login_username.getText().trim();
 		passwordInput = login_password.getText().trim();
@@ -105,29 +108,36 @@ public class LoginPageController {
 				login_username.getStyleClass().remove("borderBox");
 				login_password.getStyleClass().remove("borderBox");
 				
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				// This is used for loading mysql Driver				
-				// REMINDER: THIS MUST CHANGE ACCORDING TO YOUR DEVICE ESPECIALLY THE PORT ADDRESS!!
-				// those inside the getConnection parameter is => (Database:Driver://ServerAddress:PortAddress/DatabaseName,Username,Password)
-				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/payrollsystemdb", "root", "");	
+				Connection con = Main.getSQLConnection(); //Get the connection from main class
+				System.out.println("low");
 				// This will check if there are similar data inside the database according to the input of the user 
 				// This will retrieve the username and password based on the input of the user		
 				// The 'BINARY' function will convert the string to a value which it is used as case-sensitivity checking.
-				String statement = "SELECT count(1) FROM credentials WHERE BINARY username= '" + usernameInput +"' AND BINARY password='"+ passwordInput + "';";
+				String statement = "SELECT count(1) FROM credentials WHERE BINARY username= ? AND BINARY password= ?";
 
 				
-				// This will create and execute the statement
-				Statement stat = con.createStatement();
-				ResultSet queryResult = stat.executeQuery(statement);
-
+				// This will prepare a statement to replace the values in ?
+				PreparedStatement ps = con.prepareStatement(statement);				
+				ps.setString(1, usernameInput);
+				ps.setString(2, passwordInput);
+				
+				
+				ResultSet queryResult = ps.executeQuery();	
 				
 				while (queryResult.next()) {
+					System.out.println(queryResult.getInt(1));
+					
+					System.out.println("checkpoint2");
 					if(queryResult.getInt(1) == 1) {
 						queryResult.close();
-						statement = "SELECT newUser FROM credentials WHERE BINARY username= '" + usernameInput +"' AND BINARY password='"+ passwordInput + "';";
-						queryResult = stat.executeQuery(statement);
+						statement = "SELECT newUser FROM credentials WHERE BINARY username= ? AND BINARY password= ?;";
+						ps = con.prepareStatement(statement);				
+						ps.setString(1, usernameInput);
+						ps.setString(2, passwordInput);
+						queryResult = ps.executeQuery();	
 						
 						while(queryResult.next()) {
+							
 							if(queryResult.getInt(1) == 0) {
 								// This will switch the page to homepage if validated 
 								root = FXMLLoader.load(getClass().getResource("HomePageSetup.fxml")); 
@@ -157,14 +167,13 @@ public class LoginPageController {
 					}		
 				} 
 				// This will catch the errors and prints it in the console to be diagnosed
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
+			} 
+			catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+		return usernameInput;
 	}
 	
 	
@@ -174,8 +183,9 @@ public class LoginPageController {
 		exitMessageLabel.setVisible(false);
 	}
 	
-	
-	public void userData(String username, String password) {
+	public void userData(String username, String password) throws SQLException {
+		Connection con = Main.getSQLConnection();
+		String usernamee = this.usernameInput;
 		
 	}
 }

@@ -40,11 +40,15 @@ public class HomepageSetupController {
 		else {
 			dropdownPane.setVisible(true);
 		}
+		LoginPageController login = new LoginPageController();
+		System.out.println(login.usernameInput);
+		System.out.println(login.passwordInput);
 		
 	}
 	public void logOutButton(ActionEvent event) throws Exception {
 		Main main = new Main();
 		main.sceneChanger(event, "Login.fxml");;
+		
 	}
 	public void redirectToSettings(ActionEvent event) throws Exception {
 		root = FXMLLoader.load(getClass().getResource("Login.fxml")); 
