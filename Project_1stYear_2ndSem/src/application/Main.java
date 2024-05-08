@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import Scenes.LoginPageController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -34,11 +35,13 @@ public class Main extends Application{
 	//Loading Scenes Using JAVAFX
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		root = FXMLLoader.load(getClass().getResource("../Scenes/Login.fxml"));
+		root = FXMLLoader.load(getClass().getResource("../Scenes/login.fxml"));
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("../CSS/login.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.show();
+//		LoginPageController controller = new LoginPageController();
+//		controller.initializeComboBox();
 	}
 	public static Connection getSQLConnection() throws SQLException {		
 		try {

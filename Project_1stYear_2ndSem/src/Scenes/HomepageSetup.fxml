@@ -37,7 +37,7 @@
                         <Font name="Rowdies Regular" size="24.0" />
                      </font>
                   </Label>
-                  <Label disable="true" text="PEOPLE" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <Label text="PEOPLE" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font name="Rowdies Regular" size="24.0" />
                      </font>

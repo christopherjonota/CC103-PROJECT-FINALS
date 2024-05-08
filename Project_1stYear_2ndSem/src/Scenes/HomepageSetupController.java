@@ -1,6 +1,7 @@
 package Scenes;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import application.Main;
 import javafx.event.ActionEvent;
@@ -33,7 +34,7 @@ public class HomepageSetupController {
 	
 	
 	
-	public void showLogOutBox(){
+	public void showLogOutBox() throws SQLException{
 		if (dropdownPane.isVisible() == true) {
 			dropdownPane.setVisible(false);
 		}
@@ -41,8 +42,8 @@ public class HomepageSetupController {
 			dropdownPane.setVisible(true);
 		}
 		LoginPageController login = new LoginPageController();
-		System.out.println(login.usernameInput);
-		System.out.println(login.passwordInput);
+		System.out.println();
+		System.out.println(login.userData());
 		
 	}
 	public void logOutButton(ActionEvent event) throws Exception {
