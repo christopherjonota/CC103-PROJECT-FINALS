@@ -16,6 +16,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -25,6 +26,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -500,18 +502,51 @@ public class LoginPageController {
 	}
 	@FXML
 	private void computeButtonClicked(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("home.fxml")); 
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
-		scene = new Scene(root); 
-		stage.setScene(scene); 
-		stage.show();
+		
+		int days = Integer.parseInt(workingHours.getText());
+		int salaryperday = Integer.parseInt(salaryPerDay.getText());
+		int totalmonthsalary = days * salaryperday;
+		int otHours = Integer.parseInt(OtTime.getText());
+		double otTotal = (otHours * 0.25)* salaryperday; //25% ot rate
+		OtAmount.setText(" " + otTotal);
+		salaryPerMonth.setText(" "+totalmonthsalary);
+		
+		int latehours = Integer.parseInt(late.getText());
+		int absentcount = Integer.parseInt(absent.getText());
+		lateAmount.setText(" " + latehours * 150);
+		absentAmount.setText(" " + salaryperday * absentcount);
+		int totaldect = (salaryperday * absentcount ) + (latehours * 150);
+		deductionTotal.setText(" " + totaldect);
+		double totalsweldo =  (totalmonthsalary + otTotal) + totaldect;
+		
+		salaryTotal.setText("" + totalsweldo);
 	}
 	@FXML
 	private void clearButtonClicked(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("home.fxml")); 
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
-		scene = new Scene(root); 
-		stage.setScene(scene); 
-		stage.show();
+		salaryTotal.setText("---");
+		deductionTotal.setText("---");
+		absentAmount.setText("---");
+		lateAmount.setText("---");
+		salaryPerMonth.setText("---");
+		OtAmount.setText("---");
+        workingHours.clear();
+        salaryPerDay.clear();
+        OtTime.clear();
+        late.clear();
+        absent.clear();
 	}
+	
+	private void printContent() {
+        // Create a printable node or scene
+        StackPane content = new StackPane(new Button("Content to print"));
+
+        // Create a PrinterJob
+        PrinterJob printerJob = PrinterJob.createPrinterJob();
+        if (printerJob != null && printerJob.showPrintDialog(content.getScene().getWindow())) {
+            boolean success = printerJob.printPage(content);
+            if (success) {
+                printerJob.endJob();
+            }
+        }
+    }
 }

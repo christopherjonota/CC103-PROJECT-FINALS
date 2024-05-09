@@ -23,11 +23,11 @@
             <Image url="@../img/loginPage/loginBg.jpg" />
          </image>
       </ImageView>
-      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" hmax="0.0" layoutX="300.0" layoutY="80.0" maxHeight="2500.0" maxWidth="-Infinity" minHeight="800.0" minViewportHeight="2500.0" minViewportWidth="960.0" minWidth="980.0" pannable="true" prefHeight="2500.0" prefViewportHeight="2500.0" prefViewportWidth="960.0" prefWidth="980.0" vbarPolicy="ALWAYS" vmax="20.0" vmin="1.0" vvalue="1.0">
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" hmax="0.0" layoutX="300.0" layoutY="80.0" maxHeight="2100.0" maxWidth="-Infinity" minHeight="800.0" minViewportHeight="2500.0" minViewportWidth="960.0" minWidth="980.0" pannable="true" prefHeight="1450.0" prefViewportHeight="2500.0" prefViewportWidth="960.0" prefWidth="980.0" vbarPolicy="ALWAYS" vmax="20.0" vmin="1.0" vvalue="1.0">
         <content>
-          <AnchorPane maxHeight="2100.0" maxWidth="-Infinity" minHeight="2100.0" minWidth="980.0" prefHeight="2100.0" prefWidth="980.0">
+          <AnchorPane maxHeight="1500.0" maxWidth="-Infinity" minHeight="1500.0" minWidth="980.0" prefHeight="1500.0" prefWidth="980.0">
                <children>
-                  <ImageView fitHeight="2100.0" fitWidth="980.0" layoutX="-2.0" layoutY="-12.0" pickOnBounds="true">
+                  <ImageView fitHeight="1500.0" fitWidth="980.0" layoutX="-2.0" layoutY="-12.0" pickOnBounds="true">
                      <image>
                         <Image url="@../img/loginPage/rightPaneBg.jpg" />
                      </image>
@@ -191,6 +191,11 @@
                         <Font name="Rowdies Regular" size="24.0" />
                      </font>
                   </Label>
+                  <Button layoutX="411.0" layoutY="1364.0" mnemonicParsing="false" onAction="#computeButtonClicked" text="Print Document">
+                     <font>
+                        <Font name="Rowdies Regular" size="24.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
         </content>
@@ -208,11 +213,6 @@
       <ImageView fitHeight="100.0" fitWidth="60.0" layoutX="123.0" layoutY="513.0" onMouseClicked="#payrollButtonClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/HomePage/money.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="60.0" layoutX="123.0" layoutY="648.0" onMouseClicked="#logOutButtonClicked" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/HomePage/logout.png" />
          </image>
       </ImageView>
       <Label layoutX="120.0" layoutY="182.0" onMouseClicked="#homeButtonClicked" text="Home" textFill="WHITE">
@@ -245,5 +245,10 @@
             <Font name="Rowdies Regular" size="24.0" />
          </font>
       </Label>
+      <ImageView fitHeight="150.0" fitWidth="60.0" layoutX="123.0" layoutY="633.0" onMouseClicked="#logOutButtonClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/HomePage/logout.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
