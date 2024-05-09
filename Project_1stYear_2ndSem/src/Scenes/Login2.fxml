@@ -19,7 +19,7 @@
    <right>
       <VBox prefHeight="720.0" prefWidth="436.0" styleClass="vbox_background_right" stylesheets="@../CSS/login.css" BorderPane.alignment="CENTER">
          <children>
-            <GridPane prefHeight="810.0" prefWidth="580.0">
+            <GridPane accessibleRole="TEXT_FIELD" prefHeight="810.0" prefWidth="580.0">
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
