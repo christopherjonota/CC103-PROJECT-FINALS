@@ -135,8 +135,7 @@ public class LoginPageController {
 	
 	// This will load the scenes or pages if you call this method
 	// This is attached as 'On Action' on the Login Button located above as navigation bar
-	@FXML
-	public void switchToLogin(ActionEvent event) throws IOException {
+	@FXML public void switchToLogin(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
@@ -147,14 +146,13 @@ public class LoginPageController {
 	
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////
-	// FOR THE NAVIGATION BAR - REGISTER
-	// This will load the scene for Register page
-	//
-	//
-	//
-	//		Put your code or method here like above to switch to register page
-	//
-	//
+	@FXML public void switchToRegisterPage(ActionEvent event) throws IOException {
+		root = FXMLLoader.load(getClass().getResource("registerPage.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 	//////////////////////////////////////////////////////////////////////////////////////////////
 
 	
