@@ -35,7 +35,7 @@ public class Main extends Application{
 	//Loading Scenes Using JAVAFX
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		root = FXMLLoader.load(getClass().getResource("../Scenes/login.fxml"));
+		root = FXMLLoader.load(getClass().getResource("../Scenes/registerPage.fxml"));
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("../CSS/login.css").toExternalForm());
 		primaryStage.setScene(scene);
