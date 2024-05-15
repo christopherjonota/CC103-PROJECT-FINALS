@@ -25,9 +25,9 @@
             <Image url="@../img/loginPage/loginBg.jpg" />
          </image>
       </ImageView>
-      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" hmax="0.0" layoutX="300.0" layoutY="80.0" maxHeight="2500.0" maxWidth="-Infinity" minHeight="800.0" minViewportHeight="2500.0" minViewportWidth="960.0" minWidth="980.0" pannable="true" prefHeight="2500.0" prefViewportHeight="2500.0" prefViewportWidth="960.0" prefWidth="980.0" vbarPolicy="ALWAYS" vmax="20.0" vmin="1.0" vvalue="1.0">
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" hmax="0.0" layoutX="300.0" layoutY="80.0" maxHeight="1400.0" maxWidth="-Infinity" minHeight="800.0" minViewportHeight="200.0" minViewportWidth="960.0" minWidth="980.0" pannable="true" prefHeight="200.0" prefViewportHeight="1400.0" prefViewportWidth="960.0" prefWidth="980.0" vbarPolicy="ALWAYS" vmax="20.0" vmin="1.0" vvalue="1.0">
         <content>
-          <AnchorPane maxHeight="2100.0" maxWidth="-Infinity" minHeight="2100.0" minWidth="980.0" prefHeight="2100.0" prefWidth="980.0">
+          <AnchorPane maxHeight="1500.0" maxWidth="-Infinity" minHeight="1500.0" minWidth="980.0" prefHeight="1500.0" prefWidth="980.0">
                <children>
                   <ImageView fitHeight="2100.0" fitWidth="980.0" layoutX="-2.0" layoutY="-12.0" pickOnBounds="true">
                      <image>
