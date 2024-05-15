@@ -1,11 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenes.DashboardController">
    <children>
-      <Circle fill="DODGERBLUE" layoutX="120.0" layoutY="114.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="720.0" fitWidth="300.0" layoutY="80.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/loginPage/loginBg.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="1280.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/loginPage/loginBg.jpg" />
+         </image>
+      </ImageView>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" hmax="0.0" layoutX="300.0" layoutY="80.0" maxHeight="1000.0" maxWidth="-Infinity" minHeight="1000.0" minViewportHeight="1000.0" minViewportWidth="960.0" minWidth="980.0" prefHeight="1000.0" prefViewportHeight="1000.0" prefViewportWidth="960.0" prefWidth="980.0" snapToPixel="false" vbarPolicy="ALWAYS">
+        <content>
+          <AnchorPane maxHeight="1250.0" maxWidth="-Infinity" minHeight="500.0" minWidth="980.0" prefHeight="1300.0" prefWidth="980.0">
+               <children>
+                  <ImageView fitHeight="1000.0" fitWidth="980.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/loginPage/rightPaneBg.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="54.0" layoutY="60.0" text="WELCOME, " textFill="WHITE">
+                     <font>
+                        <Font name="Rowdies Regular" size="36.0" />
+                     </font>
+                  </Label>
+                  <Line endX="767.0" layoutX="148.0" layoutY="128.0" startX="-100.0" />
+                  <Label layoutX="43.0" layoutY="692.0" text="Payroll Cost Summary" textFill="WHITE">
+                     <font>
+                        <Font name="Rowdies Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="name" layoutX="365.0" layoutY="254.0" textFill="WHITE">
+                     <font>
+                        <Font name="Rowdies Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="user_name" layoutX="286.0" layoutY="60.0" text="Name" textFill="WHITE">
+                     <font>
+                        <Font name="Rowdies Regular" size="36.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="30.0" layoutY="195.0" prefHeight="180.0" prefWidth="900.0" style="-fx-background-color: #135D66;">
+                     <children>
+                        <Label layoutX="30.0" layoutY="40.0" text="EMPLOYEES NET PAY" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="77.0" text="₱" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="92.0" layoutY="84.0" text="0000.00" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="24.0" />
+                           </font>
+                        </Label>
+                        <Line endX="-1.0" endY="77.0" layoutX="270.0" layoutY="69.0" startX="-1.0" startY="-36.0" stroke="WHITE" />
+                        <Label layoutX="318.0" layoutY="40.0" text="PAYMENT DATE" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="316.0" layoutY="84.0" text="30 May 2024" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="554.0" layoutY="40.0" text="NO. OF EMPLOYEES" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="568.0" layoutY="84.0" text="30 May 2024" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="24.0" />
+                           </font>
+                        </Label>
+                        <Line endX="-1.0" endY="77.0" layoutX="512.0" layoutY="69.0" startX="-1.0" startY="-36.0" stroke="WHITE" />
+                        <Button layoutX="781.0" layoutY="138.0" mnemonicParsing="false" text="View Details">
+                           <font>
+                              <Font name="Rowdies Regular" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Label layoutX="46.0" layoutY="154.0" text="Process Pay Roll for May 2024" textFill="WHITE">
+                     <font>
+                        <Font name="Rowdies Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="38.0" layoutY="436.0" prefHeight="180.0" prefWidth="485.0" style="-fx-background-color: #344955;">
+                     <children>
+                        <Label layoutX="30.0" layoutY="40.0" text="EMPLOYEES NET PAY" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="77.0" text="₱" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="92.0" layoutY="84.0" text="0000.00" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="24.0" />
+                           </font>
+                        </Label>
+                        <Line endX="-1.0" endY="77.0" layoutX="270.0" layoutY="69.0" startX="-1.0" startY="-36.0" stroke="WHITE" />
+                        <Label layoutX="318.0" layoutY="40.0" text="PAYMENT DATE" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="316.0" layoutY="84.0" text="30 May 2024" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="46.0" layoutY="405.0" text="Taxes and Deductions" textFill="WHITE">
+                     <font>
+                        <Font name="Rowdies Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="583.0" layoutY="405.0" text="Employees Summary" textFill="WHITE">
+                     <font>
+                        <Font name="Rowdies Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="583.0" layoutY="436.0" prefHeight="180.0" prefWidth="282.0" style="-fx-background-color: #1F2544;">
+                     <children>
+                        <Label layoutX="30.0" layoutY="40.0" text="EMPLOYEES NET PAY" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="77.0" text="₱" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="92.0" layoutY="84.0" text="0000.00" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="43.0" layoutY="735.0" prefHeight="180.0" prefWidth="890.0" style="-fx-background-color: #F6F5F2;" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <ImageView fitHeight="150.0" fitWidth="60.0" layoutX="123.0" layoutY="122.0" onMouseClicked="#payrollButtonClicked" pickOnBounds="true" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@../img/HomePage/house.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="60.0" layoutX="123.0" layoutY="258.0" onMouseClicked="#manageEmployeesButtonClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/HomePage/team-management.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="60.0" layoutX="123.0" layoutY="513.0" onMouseClicked="#payrollButtonClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/HomePage/money.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="60.0" layoutX="123.0" layoutY="648.0" onMouseClicked="#logOutButtonClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/HomePage/logout.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="120.0" layoutY="182.0" onMouseClicked="#payrollButtonClicked" text="Home" textFill="WHITE">
+         <font>
+            <Font name="Rowdies Regular" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="42.0" layoutY="318.0" onMouseClicked="#manageEmployeesButtonClicked" text="Manage Employees" textFill="WHITE">
+         <font>
+            <Font name="Rowdies Regular" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="112.0" layoutY="573.0" onMouseClicked="#payrollButtonClicked" text="Payroll" textFill="WHITE">
+         <font>
+            <Font name="Rowdies Regular" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="113.0" layoutY="708.0" onMouseClicked="#logOutButtonClicked" text="Logout" textFill="WHITE">
+         <font>
+            <Font name="Rowdies Regular" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="60.0" layoutX="123.0" layoutY="388.0" onMouseClicked="#addEmployeesButtonClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/HomePage/add-user.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="71.0" layoutY="448.0" onMouseClicked="#addEmployeesButtonClicked" text="Add Employee" textFill="WHITE">
+         <font>
+            <Font name="Rowdies Regular" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Pane prefHeight="80.0" prefWidth="1280.0">
+         <children>
+            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="50.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/loginPage/logo.png" />
+               </image>
+            </ImageView>
+            <Text fill="#00ccc1" fontSmoothingType="LCD" layoutX="100.0" layoutY="52.0" stroke="#12454d" strokeType="OUTSIDE" strokeWidth="2.0" text="QCU PAYROLL" textAlignment="CENTER" wrappingWidth="289.3782653808594">
+               <font>
+                  <Font name="Rowdies Bold" size="32.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </Pane>

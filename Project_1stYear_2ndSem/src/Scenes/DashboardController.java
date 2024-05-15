@@ -29,7 +29,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-public class LoginPageController {
+public class DashboardController {
+	DatabaseConnection dbCon = new DatabaseConnection();
+	SceneController controller = new SceneController();
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	// SETUP
 	private Stage stage;	
@@ -127,45 +129,21 @@ public class LoginPageController {
 	private Label salaryTotal;
 
 	
-	
-	
-	
-	//////////////////////////////////////////////////////////////////////////////////////////////
-	// FOR THE NAVIGATION BAR - LOGIN
-	
 	// This will load the scenes or pages if you call this method
-	// This is attached as 'On Action' on the Login Button located above as navigation bar
 	@FXML public void switchToLogin(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
-	//////////////////////////////////////////////////////////////////////////////////////////////
-	
-	
-	//////////////////////////////////////////////////////////////////////////////////////////////
+		controller.sceneChanger(event, "LoginPage.fxml");
+	}	
 	@FXML public void switchToRegisterPage(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("registerPage.fxml"));
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		controller.sceneChanger(event, "RegisterPage.fxml");
 	}
-	//////////////////////////////////////////////////////////////////////////////////////////////
 
-	
-	//////////////////////////////////////////////////////////////////////////////////////////////
 	// Method for the Login Button in the input area
-	@FXML
-	public void loginClicked(ActionEvent event) throws IOException {
+	@FXML public void loginClicked(ActionEvent event) throws IOException {
 		// trim() - is used to remove whitespaces on the input of the user
 		usernameInput = login_username.getText().trim();
-		String passwordInput = login_password.getText().trim();
+		passwordInput = login_password.getText().trim();
 
-		// If the user do not input something or inputs a white space and click the
-		// login button, this will return.
+		// If the user do not input something or inputs a white space and click the login button, this will return.
 		if (login_username.getText().isBlank() || login_password.getText().isBlank()) {
 			loginMessageLabel.setText("Please fill out the fields below.");
 			
@@ -192,8 +170,8 @@ public class LoginPageController {
 				login_username.getStyleClass().remove("borderBox");
 				login_password.getStyleClass().remove("borderBox");
 				
-				Connection con = Main.getSQLConnection(); //Get the connection from main class
-				System.out.println("low");
+				Connection con = dbCon.getConnection(); //Get the connection from main class
+				
 				// This will check if there are similar data inside the database according to the input of the user 
 				// This will retrieve the username and password based on the input of the user		
 				// The 'BINARY' function will convert the string to a value which it is used as case-sensitivity checking.
@@ -204,49 +182,29 @@ public class LoginPageController {
 				PreparedStatement ps = con.prepareStatement(statement);				
 				ps.setString(1, usernameInput);
 				ps.setString(2, passwordInput);
-				
-				
 				ResultSet queryResult = ps.executeQuery();	
 				
 				while (queryResult.next()) {
-					System.out.println(queryResult.getInt(1));
-					
-					System.out.println("checkpoint2");
 					if(queryResult.getInt(1) == 1) {
 						queryResult.close();
-						statement = "SELECT newUser FROM credentials WHERE BINARY username= ? AND BINARY password= ?;";
-						ps = con.prepareStatement(statement);				
+						statement = "SELECT id FROM credentials WHERE BINARY username= ?";
+						ps = con.prepareStatement(statement);	
 						ps.setString(1, usernameInput);
-						ps.setString(2, passwordInput);
 						queryResult = ps.executeQuery();	
-						
-						while(queryResult.next()) {
+					
+						while (queryResult.next()) {
 							
-							if(queryResult.getInt(1) == 0) {
-								userData();
-								// This will switch the page to homepage if validated 
-								root = FXMLLoader.load(getClass().getResource("payroll.fxml")); 
-								stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
-								scene = new Scene(root); 
-								stage.setScene(scene); 
-								stage.show();
-							}	
-							else if(queryResult.getInt(1) == 1) {
-								userData();
-								// This will switch the page to homepage if validated 
-								root = FXMLLoader.load(getClass().getResource("HomePage.fxml")); 
-								stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
-								scene = new Scene(root); 
-								stage.setScene(scene); 
-								stage.show();
-							}	
-						}	
+							int userID = queryResult.getInt("id");
+							HomePageController home = new HomePageController();
+							home.setUserID(userID);
+							controller.sceneChanger(event, "HomePage.fxml");
+						}					
 					}
 					else {
 						login_username.setText("");
 						login_password.setText("");
 						loginMessageLabel.setText("Incorrect username or password.");
-						loginMessageBackground.setVisible(true);
+						loginMessageBackground.setVisible(true);	
 						exitMessageLabel.setVisible(true);
 						login_username.getStyleClass().add("borderBox");
 						login_password.getStyleClass().add("borderBox");
@@ -262,32 +220,21 @@ public class LoginPageController {
 	}
 	
 	
+	
 	public void exitMessage(ActionEvent event) throws IOException{
 		loginMessageLabel.setText("");
 		loginMessageBackground.setVisible(false);
 		exitMessageLabel.setVisible(false);
 	}
 	
-	public String userData() throws SQLException {
-		Connection con = Main.getSQLConnection();
-		String statement = "SELECT username FROM credentials WHERE BINARY username= ? AND BINARY password= ?";
-
-		// This will prepare a statement to replace the values in ?
-		PreparedStatement ps = con.prepareStatement(statement);				
-		ps.setString(1, usernameInput);
-		ps.setString(2, passwordInput);
-		
-		ResultSet queryResult = ps.executeQuery();	
-		while(queryResult.next()) {
-			username = queryResult.getString(1);
-		}
-		return username;
-	}
+	
+	private String loginUsername;
+	private String user_nameee = "Chris";
+	
 	
 	
 // ADD Employee Tab
-	@FXML
-	private void addPhoto(ActionEvent event) {
+	@FXML private void addPhoto(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
 
@@ -311,8 +258,7 @@ public class LoginPageController {
         }
     }
 	
-	@FXML
-	private void addEmployeeButtonClicked(ActionEvent event) {
+	@FXML private void addEmployeeButtonClicked(ActionEvent event) {
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/payrollsystemdb", "root", "")) {
             // Create a SQL INSERT statement
             String sql = "INSERT INTO userdata (firstname, middlename, lastname, job_position, employment_type, basic_rate, per, birthday, contactNumber, emailAddress, "
@@ -352,6 +298,9 @@ public class LoginPageController {
             System.err.println("Error saving data to database: " + e.getMessage());
         }
 	}
+	
+	
+	
 //	@FXML
 //	public void initializeComboBox() {
 //		birthday_month.setItems(FXCollections.observableArrayList(
@@ -387,76 +336,22 @@ public class LoginPageController {
 	
 	
 	
-// NAVIGATION BARS
 
-	@FXML
-	private void logOutButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Login.fxml")); 
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
-		scene = new Scene(root); 
-		stage.setScene(scene); 
-		stage.show();
+	
+	@FXML private void payrollButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
+		controller.sceneChanger(event, "PayrollPage.fxml");
 	}
-	
-	
-	@FXML
-	private void payrollButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("payroll.fxml")); 
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
-		scene = new Scene(root); 
-		stage.setScene(scene); 
-		stage.show();
+	@FXML private void addEmployeesButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
+		controller.sceneChanger(event, "AddEmployeesPage.fxml");
 	}
-	
-	@FXML
-	private void addEmployeesButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("addEmployees.fxml")); 
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
-		scene = new Scene(root); 
-		stage.setScene(scene); 
-		stage.show();
-//        // Establish a connection to the MySQL database
-//        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/payrollsystemdb", "root", "")) {
-//            // Create a SQL query to count the rows in the table
-//            String sql = "SELECT COUNT(*) AS row_count FROM userdata";
-//
-//            // Create a Statement to execute the query
-//            try (Statement statement = connection.createStatement()) {
-//                // Execute the query and retrieve the result set
-//                ResultSet resultSet = statement.executeQuery(sql);
-//
-//                // Retrieve the row count from the result set
-//                if (resultSet.next()) {
-//                    int rowCount = resultSet.getInt("row_count");
-//
-//                    // Update the label with the row count
-//                    if(employeeID == null) {
-//                    	 employeeID.setText("" + rowCount+1);
-//                    }
-//                   
-//                }
-//            }
-//        } catch (SQLException e) {
-//            System.err.println("Error retrieving row count from database: " + e.getMessage());
-//        }
-    }
-	
-	
-	@FXML
-	private void manageEmployeesButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("manageEmployees.fxml")); 
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
-		scene = new Scene(root); 
-		stage.setScene(scene); 
-		stage.show();
+	@FXML private void manageEmployeesButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
+		controller.sceneChanger(event, "ManageEmployeesPage.fxml");
 	}
-	@FXML
-	private void homeButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("home.fxml")); 
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
-		scene = new Scene(root); 
-		stage.setScene(scene); 
-		stage.show();
+	@FXML private void homeButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
+		controller.sceneChanger(event, "HomePage.fxml");
+	}
+	@FXML private void logOutButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
+		controller.sceneChanger(event, "LoginPage.fxml");
 	}
 	
 	

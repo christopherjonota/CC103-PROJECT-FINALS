@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -10,8 +11,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenes.LoginPageController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenes.DashboardController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="300.0" layoutY="80.0" pickOnBounds="true">
          <image>
@@ -346,51 +348,95 @@
          <image>
             <Image url="@../img/HomePage/house.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="60.0" layoutX="123.0" layoutY="258.0" onMouseClicked="#manageEmployeesButtonClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/HomePage/team-management.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fitHeight="100.0" fitWidth="60.0" layoutX="123.0" layoutY="513.0" onMouseClicked="#payrollButtonClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/HomePage/money.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="60.0" layoutX="123.0" layoutY="648.0" onMouseClicked="#logOutButtonClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/HomePage/logout.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <Label layoutX="120.0" layoutY="182.0" onMouseClicked="#homeButtonClicked" text="Home" textFill="WHITE">
          <font>
             <Font name="Rowdies Regular" size="24.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label layoutX="42.0" layoutY="318.0" onMouseClicked="#manageEmployeesButtonClicked" text="Manage Employees" textFill="WHITE">
          <font>
             <Font name="Rowdies Regular" size="24.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label layoutX="112.0" layoutY="573.0" onMouseClicked="#payrollButtonClicked" text="Payroll" textFill="WHITE">
          <font>
             <Font name="Rowdies Regular" size="24.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label layoutX="113.0" layoutY="708.0" onMouseClicked="#logOutButtonClicked" text="Logout" textFill="WHITE">
          <font>
             <Font name="Rowdies Regular" size="24.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <ImageView fitHeight="150.0" fitWidth="60.0" layoutX="123.0" layoutY="388.0" onMouseClicked="#addEmployeesButtonClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/HomePage/add-user.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <Label layoutX="71.0" layoutY="448.0" onMouseClicked="#addEmployeesButtonClicked" text="Add Employee" textFill="WHITE">
          <font>
             <Font name="Rowdies Regular" size="24.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
+      <Pane prefHeight="80.0" prefWidth="1280.0">
+         <children>
+            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="50.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/loginPage/logo.png" />
+               </image>
+            </ImageView>
+            <Text fill="#00ccc1" fontSmoothingType="LCD" layoutX="100.0" layoutY="52.0" stroke="#12454d" strokeType="OUTSIDE" strokeWidth="2.0" text="QCU PAYROLL" textAlignment="CENTER" wrappingWidth="289.3782653808594">
+               <font>
+                  <Font name="Rowdies Bold" size="32.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </Pane>
