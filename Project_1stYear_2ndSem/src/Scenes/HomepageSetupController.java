@@ -16,6 +16,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class HomepageSetupController {
+	SceneController controller = new SceneController();
 	private Stage stage;	
 	private Scene scene; 	
 	private Parent root;
@@ -41,14 +42,14 @@ public class HomepageSetupController {
 		else {
 			dropdownPane.setVisible(true);
 		}
-		LoginPageController login = new LoginPageController();
+		DashboardController login = new DashboardController();
 		System.out.println();
-		System.out.println(login.userData());
+		
 		
 	}
 	public void logOutButton(ActionEvent event) throws Exception {
-		Main main = new Main();
-		main.sceneChanger(event, "Login.fxml");;
+		
+		controller.sceneChanger(event, "Login.fxml");
 		
 	}
 	public void redirectToSettings(ActionEvent event) throws Exception {

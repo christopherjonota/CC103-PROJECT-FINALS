@@ -15,6 +15,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -27,35 +28,36 @@
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="120.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="22.0" minHeight="22.0" prefHeight="22.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="19.0" minHeight="19.0" prefHeight="19.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="20.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="10.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
@@ -63,7 +65,7 @@
                         <Image url="@../img/loginPage/QCU_Logo_2019.png" />
                      </image>
                   </ImageView>
-                  <Button accessibleRole="TEXT" maxHeight="40.0" maxWidth="225.0" minHeight="40.0" minWidth="225.0" mnemonicParsing="false" onAction="#signupClicked" prefHeight="40.0" prefWidth="225.0" style="-fx-background-radius: 25;" text="CREATE ACCOUNT" textFill="WHITE" GridPane.rowIndex="27">
+                  <Button accessibleRole="TEXT" maxHeight="40.0" maxWidth="225.0" minHeight="40.0" minWidth="225.0" mnemonicParsing="false" onAction="#signupClicked" prefHeight="40.0" prefWidth="225.0" style="-fx-background-radius: 25;" text="CREATE ACCOUNT" textFill="WHITE" GridPane.rowIndex="28">
                      <font>
                         <Font name="Rowdies Bold" size="18.0" />
                      </font>
@@ -77,63 +79,23 @@
                         <Font name="Rowdies Regular" size="18.0" />
                      </font>
                   </Text>
-                  <Label textFill="#e82323" GridPane.rowIndex="9">
+                  <Label textFill="#e82323" GridPane.rowIndex="10">
                      <font>
                         <Font name="Rowdies Light" size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="signup_companyname" maxHeight="40.0" maxWidth="350.0" minHeight="40.0" minWidth="350.0" prefHeight="40.0" prefWidth="350.0" promptText="Company Name" style="-fx-background-color: rgba(0,0,0,0); -fx-border-color: #FFFFFF; -fx-border-width: 2PX; -fx-text-fill: #FFFFFF;" GridPane.rowIndex="9">
+                  <TextField fx:id="signup_companyname" maxHeight="40.0" maxWidth="350.0" minHeight="40.0" minWidth="350.0" prefHeight="40.0" prefWidth="350.0" promptText="Company Name" style="-fx-background-color: rgba(0,0,0,0); -fx-border-color: #FFFFFF; -fx-border-width: 2PX; -fx-text-fill: #FFFFFF;" GridPane.rowIndex="10">
                      <font>
                         <Font name="Rowdies Light" size="14.0" />
                      </font></TextField>
-                  <Label text="COMPANY NAME" textFill="WHITE" GridPane.halignment="LEFT" GridPane.rowIndex="7">
-                     <padding>
-                        <Insets left="42.0" />
-                     </padding>
-                     <font>
-                        <Font name="Rowdies Regular" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="signup_username" layoutX="53.0" layoutY="230.0" maxHeight="40.0" maxWidth="350.0" minHeight="40.0" minWidth="350.0" prefHeight="40.0" prefWidth="350.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-color: #FFFFFF; -fx-border-width: 2PX; -fx-text-fill: #FFFFFF;" GridPane.rowIndex="13">
+                  <TextField fx:id="signup_username" layoutX="53.0" layoutY="230.0" maxHeight="40.0" maxWidth="350.0" minHeight="40.0" minWidth="350.0" prefHeight="40.0" prefWidth="350.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-color: #FFFFFF; -fx-border-width: 2PX; -fx-text-fill: #FFFFFF;" GridPane.rowIndex="14">
                      <font>
                         <Font name="Rowdies Light" size="14.0" />
                      </font></TextField>
-                  <Label layoutX="10.0" layoutY="199.0" text="USERNAME" textFill="WHITE" GridPane.halignment="LEFT" GridPane.rowIndex="11">
-                     <padding>
-                        <Insets left="42.0" />
-                     </padding>
-                     <font>
-                        <Font name="Rowdies Regular" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="10.0" layoutY="268.0" text="EMAIL" textFill="WHITE" GridPane.halignment="LEFT" GridPane.rowIndex="15">
-                     <padding>
-                        <Insets left="42.0" />
-                     </padding>
-                     <font>
-                        <Font name="Rowdies Regular" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="signup_email" layoutX="53.0" layoutY="298.0" maxHeight="40.0" maxWidth="350.0" minHeight="40.0" minWidth="350.0" prefHeight="40.0" prefWidth="350.0" promptText="Email" style="-fx-background-color: rgba(0,0,0,0); -fx-border-color: #FFFFFF; -fx-border-width: 2PX; -fx-text-fill: #FFFFFF;" GridPane.rowIndex="17">
+                  <TextField fx:id="signup_email" layoutX="53.0" layoutY="298.0" maxHeight="40.0" maxWidth="350.0" minHeight="40.0" minWidth="350.0" prefHeight="40.0" prefWidth="350.0" promptText="Email" style="-fx-background-color: rgba(0,0,0,0); -fx-border-color: #FFFFFF; -fx-border-width: 2PX; -fx-text-fill: #FFFFFF;" GridPane.rowIndex="18">
                      <font>
                         <Font name="Rowdies Light" size="14.0" />
                      </font></TextField>
-                  <Label layoutX="10.0" layoutY="380.0" text="PASSWORD" textFill="WHITE" GridPane.halignment="LEFT" GridPane.rowIndex="19">
-                     <padding>
-                        <Insets left="42.0" />
-                     </padding>
-                     <font>
-                        <Font name="Rowdies Regular" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="10.0" layoutY="432.0" text="CONFIRM PASSWORD" textFill="WHITE" GridPane.halignment="LEFT" GridPane.rowIndex="23">
-                     <padding>
-                        <Insets left="42.0" />
-                     </padding>
-                     <font>
-                        <Font name="Rowdies Regular" size="14.0" />
-                     </font>
-                  </Label>
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
                      <children>
                         <Label layoutX="130.0" layoutY="-1.0" prefHeight="22.0" prefWidth="146.0" text="Already signed up?" textFill="WHITE">
@@ -141,7 +103,7 @@
                               <Font name="Rowdies Light" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="loginClicked" alignment="CENTER" layoutX="265.0" prefHeight="20.0" prefWidth="55.0" text="Log In" textAlignment="CENTER" textFill="#22c2f4">
+                        <Label alignment="CENTER" layoutX="265.0" onMouseClicked="#switchToLoginLabel" prefHeight="20.0" prefWidth="55.0" text="Log In" textAlignment="CENTER" textFill="#22c2f4">
                            <font>
                               <Font name="Rowdies Light" size="16.0" />
                            </font>
@@ -155,7 +117,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="21">
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="22">
                      <children>
                         <PasswordField fx:id="signup_password" layoutX="43.0" onKeyPressed="#EyeVisibility" prefHeight="40.0" prefWidth="350.0" promptText="Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-color: #FFFFFF; -fx-border-width: 2px; -fx-text-fill: #FFFFFF;">
                            <font>
@@ -177,7 +139,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="25">
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="26">
                      <children>
                         <PasswordField fx:id="signup_confirmpassword" layoutX="43.0" onKeyPressed="#EyeVisibility" prefHeight="40.0" prefWidth="350.0" promptText="Confirm Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-color: #FFFFFF; -fx-border-width: 2px; -fx-text-fill: #FFFFFF;">
                            <font>
@@ -197,6 +159,66 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="20">
+                     <children>
+                        <Label layoutX="40.0" layoutY="3.0" prefHeight="18.0" prefWidth="93.0" text="PASSWORD" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="16">
+                     <children>
+                        <Label layoutX="40.0" layoutY="3.0" text="EMAIL" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="12">
+                     <children>
+                        <Label layoutX="40.0" layoutY="3.0" text="USERNAME" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="8">
+                     <children>
+                        <Label layoutX="40.0" layoutY="3.0" text="COMPANY NAME" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="24">
+                     <children>
+                        <Label layoutX="40.0" layoutY="3.0" text="CONFIRM PASSWORD" textFill="WHITE">
+                           <font>
+                              <Font name="Rowdies Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="7">
+                     <children>
+                        <Rectangle fx:id="errorMessageBackground" arcHeight="5.0" arcWidth="5.0" fill="#ff212144" height="37.0" layoutX="51.0" layoutY="2.0" stroke="RED" strokeType="INSIDE" visible="false" width="334.0" />
+                        <Label fx:id="errorMessage" alignment="CENTER" layoutX="52.0" layoutY="12.0" prefHeight="18.0" prefWidth="333.0" text="Username already exist" textAlignment="CENTER" textFill="RED" visible="false">
+                           <font>
+                              <Font name="Rowdies Light" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="errorButton" layoutX="353.0" layoutY="9.0" mnemonicParsing="false" onAction="#errorMessageButton" style="-fx-background-color: rgba(255, 255, 255, 0);" text="X" textFill="RED" visible="false">
+                           <font>
+                              <Font name="Rowdies Regular" size="12.0" />
+                           </font>
+                        </Button>
                      </children>
                   </Pane>
                </children>
@@ -226,7 +248,7 @@
                   </ImageView>
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="52.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/loginPage/logo.png" />
                            </image>
@@ -236,7 +258,7 @@
                               <Font name="Rowdies Bold" size="32.0" />
                            </font>
                         </Text>
-                        <Button fx:id="signupClicked" layoutX="510.0" layoutY="4.0" minHeight="30.0" minWidth="101.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-radius: 25;" stylesheets="@../CSS/login.css" text="SIGN UP" textFill="#f1f6cd">
+                        <Button layoutX="510.0" layoutY="4.0" minHeight="30.0" minWidth="101.0" mnemonicParsing="false" onAction="#switchToRegisterPage" prefHeight="50.0" prefWidth="140.0" style="-fx-background-radius: 25;" stylesheets="@../CSS/login.css" text="SIGN UP" textFill="#f1f6cd">
                            <font>
                               <Font name="Rowdies Regular" size="22.0" />
                            </font>
@@ -245,7 +267,7 @@
                               <String fx:value="signUp_button" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="loginClicked" layoutX="675.0" layoutY="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-radius: 25;" stylesheets="@../CSS/login.css" text="LOGIN" textFill="#f1f6cd">
+                        <Button layoutX="675.0" layoutY="3.0" mnemonicParsing="false" onAction="#switchToLoginBtn" prefHeight="50.0" prefWidth="140.0" style="-fx-background-radius: 25;" stylesheets="@../CSS/login.css" text="LOGIN" textFill="#f1f6cd">
                            <font>
                               <Font name="Rowdies Regular" size="22.0" />
                            </font>

@@ -48,20 +48,20 @@ public class Login2 {
 	// WHEN SIGNUP BUTTON IS CLICKED
 	@FXML public void signupClicked(ActionEvent event) throws IOException {
 		
-		try {
-			//This is used for loading mysql Driver
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			//those inside the getConnection parameter is => (Database:Driver://ServerAddress:PortAddress/DatabaseName,Username,Password)
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/payrollsystemdb", "root", "");
-			System.out.println("Connection Created");
-		
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			//This is used for loading mysql Driver
+//			Class.forName("com.mysql.cj.jdbc.Driver");
+//			//those inside the getConnection parameter is => (Database:Driver://ServerAddress:PortAddress/DatabaseName,Username,Password)
+//			//DatabaseConnection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/payrollsystemdb", "root", "");
+//			System.out.println("Connection Created");
+//		
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 		//	trim() -	is used to remove whitespaces on the input <3 
 		String companynameInput = signup_companyname.getText().trim();
@@ -78,23 +78,23 @@ public class Login2 {
 			alertMessage.showAndWait();
 		}
 		else{
-
-			try {
-				//This is used for loading mysql Driver
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				//those inside the getConnection parameter is => (Database:Driver://ServerAddress:PortAddress/DatabaseName,Username,Password)
-				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/payrollsystemdb", "root", "");
-				/////
-				String statement = "INSERT INTO signup (companyname,username,email,password,confirmpassword) VALUES(?,?,?,?,?);";
-				PreparedStatement ps ;
-				ps = con.prepareStatement(statement);
-				ps.setString(1,companynameInput);
-				ps.setString(2,usernameInput);
-				ps.setString(3,emailInput);
-				ps.setString(4,passwordInput);
-				ps.setString(5,confirmpasswordInput);
-				
-				ps.executeUpdate();
+//
+//			try {
+//				//This is used for loading mysql Driver
+//				Class.forName("com.mysql.cj.jdbc.Driver");
+//				//those inside the getConnection parameter is => (Database:Driver://ServerAddress:PortAddress/DatabaseName,Username,Password)
+//				//DatabaseConnection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/payrollsystemdb", "root", "");
+//				/////
+//				String statement = "INSERT INTO signup (companyname,username,email,password,confirmpassword) VALUES(?,?,?,?,?);";
+//				PreparedStatement ps ;
+//				//ps = con.prepareStatement(statement);
+//				ps.setString(1,companynameInput);
+//				ps.setString(2,usernameInput);
+//				ps.setString(3,emailInput);
+//				ps.setString(4,passwordInput);
+//				ps.setString(5,confirmpasswordInput);
+//				
+//				ps.executeUpdate();
 				
 //				Statement stat = con.createStatement();
 //			    ResultSet queryResult = stat.executeQuery(statement);
@@ -116,16 +116,16 @@ public class Login2 {
 //						alertMessage.setTitle("labas");
 //						alertMessage.showAndWait();
 //					}
-//				}
+////				}
+////				
+//			} catch (ClassNotFoundException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
 //				
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				
-			}
+//			}
 	}
 	}
 }
